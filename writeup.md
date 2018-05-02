@@ -3,7 +3,7 @@
 
 **The goal of this project is to build a classificaton system using a convoluational neural network that can identify German traffic signs with accuracy greater than 93%.**
 
-<img src="writeup_images/example_sign.jpg" style="width: 100px;"/>
+<img src="writeup_images/example_sign.jpg" width="100px" align="right"/>
 
 This summary contains the following sections.
 * The German traffic sign data set
@@ -39,20 +39,19 @@ For the training set, the total count of each sign is shown in the following bar
 #### Enlarging the data set
 A deep and predictive CNN has a large number of parameters.  A large training set is needed to make a good estimate of the parameters of the model.  The training set was increased using the following steps.
 
-* Flipping signs.  The first step was to find signs that could be flipped into themselves or into other signs.  Examples of these types of signs are enclosed below. The data set was enlarged by taking the flipped images and adding them to the data set.
 
-<img src="writeup_images/flipped_signs.jpg" style="width: 300px;"/>
+* Flipping signs.  The first step was to find signs that could be flipped into themselves or into other signs.  Examples of these types of signs are shown below. The data set was enlarged by taking the flipped images and adding them to the data set.
+<img src="writeup_images/flipped_signs.jpg" width="200px" />
 
 * Warping signs.  The next step was to take signs, warp them, and then add the warped signs back to the data set.  The signs were warped by taking the corners of the images and letting them randomly shift by up to 15% in both the vertical and horizontal direction.  Once the new positions of the corners were calculated, the opencv functions getPerspectiveTransform and warpPerspective were used to tranform the images into a warped images.  An example is shown below. 
-
-<img src="writeup_images/warped_sign.jpg" style="width: 300px;"/>
+<img src="writeup_images/warped_sign.jpg" width="200px"/>
 
 The resulting training data set now contains 3000 images per sign. This is a total of 129,000 images which is about 3 times the original set. The flipping and warping of the signs is realistic since one often sees a sign from an angle.  Enlarging the training data set in this manner increased the accuracy of the model by 2% on the validation set.
 
 ####  Preprocessing the data 
 All signs were processed by first converting them from color to gray, and then by normalizing them.  Each sign was normalized by subtracting the average of it's pixel values from itself and then dividing by 128.  An example is shown below.
 
-<img src="writeup_images/sign_norm.jpg" style="width: 300px;"/>
+<img src="writeup_images/sign_norm.jpg" width=200px/>
 
 
 ####  Model architecture.  
@@ -97,7 +96,7 @@ Using Google Maps Street View and Windows Snipping Tool, I virtually traveled th
 
 |Sign 1| Sign 2| Sign 3| Sign 4| Sign 5|
 |:---:|:---:|:---:|:---:|:---:|
-|<img src="writeup_images/sign1.jpg" style="width: 80px;"/>|<img align="left" src="writeup_images/sign2.jpg" style="width: 80px;"/>|<img src="writeup_images/sign3.jpg" style="width: 80px;"/>|<img src="writeup_images/sign4.jpg" style="width: 80px;"/>|<img src="writeup_images/sign5.jpg" style="width: 80px;"/>|
+|<img src="writeup_images/sign1.jpg" width="80px"/>|<img align="left" src="writeup_images/sign2.jpg" width="80px"/>|<img src="writeup_images/sign3.jpg" width="80px"/>|<img src="writeup_images/sign4.jpg" width="80px"/>|<img src="writeup_images/sign5.jpg" width="80px"/>|
 |Priority road|Children crossing|Go straight or left|Speed limit (30km/h)|No passing|
 
 All of these images were taken in reasonable lighting conditions, with good resolution and are not blurred.  They should be easy to classify.  The only possible complication would be the Children crossing sign where the model might have difficulty differentiating it from a Bicycles crossing sign. 
@@ -111,11 +110,11 @@ For each sign, the model predicted the following:
 
 | Image			        |     Predicted Label	|    Actual Label  |
 |:---------------------:|:-----------------:| :-----------------:
-| <img src="writeup_images/sign1.jpg" style="width: 50px;"/> | Priority road | Priority road |
-| <img src="writeup_images/sign2.jpg" style="width: 50px;"/> | Children crossing | Children crossing | 
-| <img src="writeup_images/sign3.jpg" style="width: 50px;"/> |Go straight or left | Go straight or left | 
-| <img src="writeup_images/sign4.jpg" style="width: 50px;"/> | Speed limit (30km/h)| Speed limit (30km/h)
-| <img src="writeup_images/sign5.jpg" style="width: 50px;"/> | No passing |  No passing |
+| <img src="writeup_images/sign1.jpg" width="50px"/> | Priority road | Priority road |
+| <img src="writeup_images/sign2.jpg" width="50px"/> | Children crossing | Children crossing | 
+| <img src="writeup_images/sign3.jpg" width="50px"/> |Go straight or left | Go straight or left | 
+| <img src="writeup_images/sign4.jpg" width="50px"/> | Speed limit (30km/h)| Speed limit (30km/h)
+| <img src="writeup_images/sign5.jpg" width="50px"/> | No passing |  No passing |
 
 The model correctly identified all 5 traffice signs, which gives an accuracy of 100% on this small sample.  This is close to the accuracy on the test set, and should be expected given how clear the signs were.
 
@@ -137,11 +136,11 @@ To futher investicate the model predictions, the top 5 softmax probabilities are
 
 | Sign Image | Softmax \#1 | Softmax \#2 | Softmax \#3 | Softmax \#4 | Softmax \#5 | 
 |------------|-------------|-------------|-------------|-------------|------------|
-| <img src="writeup_images/sign1.jpg" style="width: 50px;"/> | 1.0000 | 0.0000 | 0.0000 | 0.0000 | 0.0000 |
-| <img src="writeup_images/sign2.jpg" style="width: 50px;"/> | 0.9553 | 0.0314 | 0.0118 | 0.0016 | 0.0000 |
-| <img src="writeup_images/sign3.jpg" style="width: 50px;"/> | 1.0000 | 0.0000 | 0.0000 | 0.0000 | 0.0000 |
-| <img src="writeup_images/sign4.jpg" style="width: 50px;"/> | 1.0000 | 0.0000 | 0.0000 | 0.0000 | 0.0000 |
-| <img src="writeup_images/sign5.jpg" style="width: 50px;"/> | 1.0000 | 0.0000 | 0.0000 | 0.0000 | 0.0000 |
+| <img src="writeup_images/sign1.jpg" width="50px"/> | 1.0000 | 0.0000 | 0.0000 | 0.0000 | 0.0000 |
+| <img src="writeup_images/sign2.jpg" width="50px"/> | 0.9553 | 0.0314 | 0.0118 | 0.0016 | 0.0000 |
+| <img src="writeup_images/sign3.jpg" width="50px"/> | 1.0000 | 0.0000 | 0.0000 | 0.0000 | 0.0000 |
+| <img src="writeup_images/sign4.jpg" width="50px"/> | 1.0000 | 0.0000 | 0.0000 | 0.0000 | 0.0000 |
+| <img src="writeup_images/sign5.jpg" width="50px"/> | 1.0000 | 0.0000 | 0.0000 | 0.0000 | 0.0000 |
 <!--- ['Children crossing' 'Bicycles crossing' 'Slippery road','Road narrows on the right' 'Dangerous curve to the left'] --->
 
 
