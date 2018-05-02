@@ -55,7 +55,7 @@ All signs were processed by first converting them from color to gray, and then b
 
 
 ####  Model architecture.  
-1.  **Architecture:**  The CNN model has the following architecture.  It's design was motivated by ["Traffic Sign Recognition with Multi-Scale Convolution Networks" by Pierre Sermananet and Yann LeCun] (http://yann.lecun.com/exdb/publis/pdf/sermanet-ijcnn-11.pdf) and information from the website http://benchmark.ini.rub.de/.  The structure of the model is given in the following table.
+1.  **Architecture:**  The CNN model has the following architecture.  It's design was motivated by ["Traffic Sign Recognition with Multi-Scale Convolution Networks" by Pierre Sermananet and Yann LeCun](http://yann.lecun.com/exdb/publis/pdf/sermanet-ijcnn-11.pdf), ["Man vs. computer: Benchmarking machine learning algorithms for traffic sign recognition" by J. Stallkampa, M. Schlipsinga, J. Salmena, C. Igelb](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.713.656&rep=rep1&type=pdf) and information from the website http://benchmark.ini.rub.de/.  The structure of the model is given in the following table.
 
 
 | Layer         		|     Description	        					| 
