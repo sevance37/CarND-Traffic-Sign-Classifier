@@ -151,6 +151,6 @@ The trained network feature maps can be visualized using a function included in 
 
 
 ### Further Research
-* From reading papers on the project, the better models are build using the HOG (Histograms of Oriented Gradients) features of the images.  
+* From reading papers on the project, the better models are built using the HOG (Histograms of Oriented Gradients) features of the images.  
 * Higher resolution, more images, and a different type of convoluational neural network should also be researched.
 
